@@ -1,0 +1,32 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="vendor/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/q/q.js"></script>
+  <script src="../bower_components/eventEmitter/EventEmitter.min.js"></script>
+  <script src="vendor/sinon-1.12.2.js"></script>
+  <script src="vendor/mocha.js"></script>
+  <script src="vendor/chai.js"></script>
+  <script src="vendor/chai-as-promised.js"></script>
+  <script src="../src/js/instagram/base.js"></script>
+  <script src="../src/js/instagram/api.js"></script>
+  <script src="../src/js/instagram/request.js"></script>
+  <script src="../src/js/instagram/runner.js"></script>
+  <script src="../src/js/instagram/renderer.js"></script>
+  <script src="../src/js/app.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+
+  <script src="instagram/api_test.js"></script>
+  <script src="instagram/request_test.js"></script>
+  <script src="instagram/runner_test.js"></script>
+  <script>
+    mocha.run();
+  </script>
+</body>
+</html>
