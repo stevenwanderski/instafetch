@@ -1,8 +1,8 @@
-Instagram.Request = function(endpoint, accessToken, maxTagId){
+Instagram.Request = function(endpoint, accessToken, urlData){
   this.baseUrl = 'https://api.instagram.com/v1/';
   this.endpoint = endpoint;
   this.accessToken = accessToken;
-  this.maxTagId = maxTagId;
+  this.urlData = urlData;
 }
 
 Instagram.Request.prototype.run = function(){
@@ -34,6 +34,6 @@ Instagram.Request.prototype._run = function(){
 
 Instagram.Request.prototype.urlParams = function(){
   var params = { access_token: this.accessToken, count: 100 }
-  if(typeof this.maxTagId !== 'undefined'){ $.extend(params, { max_tag_id: this.maxTagId }); }
+  if(typeof this.urlData !== 'undefined'){ $.extend(params, this.urlData); }
   return params;
 }
